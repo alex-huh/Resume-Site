@@ -26,25 +26,25 @@ export default function Home() {
       justifyContent: 'center',
     }}>
       {/*Folder*/}
-      <div className="border border-red-500 relative pl-4 py-4 max-h-5/6 h-5/6 w-10/12 rounded-lg bg-yellow-200 space-x-2 flex">
+      <div className=" relative pl-4 py-4 max-h-5/6 h-5/6 w-10/12 rounded-lg bg-yellow-200 space-x-2 flex">
         {/*Left Page*/}
-        <div className="border border-red-500 p-4 max-h-full h-full flex flex-col w-1/2 bg-white left-0">
-          <div className="border border-red-500 h-1/3 flex flex-row items-center">
-            <div className="w-1/2">
-                <p className=" font-medium font-mono">
+        <div className="p-4 max-h-full h-full flex flex-col w-1/2 bg-white left-0">
+          <div className="h-1/3 flex flex-row items-center">
+            <div className="w-1/2 sm:text-medium lg:text-xl xl:text-xl">
+                <p className="font-mono">
                   <strong>Name:</strong> Alex Huh <br />
                   <strong>Age:</strong> 22 y/o <br/>
                   <strong>Degree:</strong> B.A in Computer and Data Science from NYU
                 </p>
             </div>
             {/* Profile Photo */}
-            <div className="border border-red-500 w-1/2 object-contain flex p-2 ">
-              <img className="h-full aspect-auto rounded-md" alt="Profile photo" src="/images/placeholder_profile.jpg" />
+            <div className="h-full justify-center w-1/2 object-contain flex p-2 ">
+              <img className="h-full aspect-auto rounded-md " alt="Profile photo" src="/images/bw_selfie.jpg" />
             </div>
           </div>
-          <div className="border border-red-500 h-8/12">
-              <p className="mt-2 shrink sm:text-sm md:text-base font-medium font-mono">
-                <strong>About:</strong><br />
+          <div className="h-8/12">
+              <p className="mt-2 shrink sm:text-sm md:text-lg lg:text-xl font-medium font-mono">
+                <strong>About:</strong ><br />
                 A recent graduate from NYU. Alex enjoys learning more about modern technology and keeping up to date. 
                 Alex aims to become a software engineer. 
                 <br/>
@@ -53,19 +53,21 @@ export default function Home() {
                 Club, and the Rubix Cube Club. Outside of work, he collects records, runs, boulders, cooks, and
                 enjoys spending time with his friends.
                 <br/>
+                <br/>
+                <strong></strong>
                 <a className="bg-blue-50 p-1 rounded-lg" href="Alex_Huh_ResumePDF.pdf" target="_blank" rel="noopener noreferrer"><strong>More Info: Resume</strong></a>
               </p>
             </div>
         </div>
         {/*Right Page*/}
-        <div className="border border-red-500 flex relative h-full w-1/2 pr-8 ">
-          <div className="border border-red-500 p-2 h-full flex w-full bg-white right-0">
+        <div className="flex relative h-full w-1/2 pr-8 ">
+          <div className="p-2 h-full flex w-full bg-white right-0">
             {currentPage === 1 && (
               <div className="justify-center h-full">
                 <img
                   src="/images/edu_exp_bg.png"
                   alt="Education&Exp"
-                  className="border border-red-500 p-4 h-auto w-auto object-cover rounded-lg"
+                  className="p-4 h-full w-full object-contain rounded-lg"
                 />
               </div>
             )}
@@ -75,7 +77,7 @@ export default function Home() {
                 <img
                   src="/images/extra.png"
                   alt="Extracurriculars"
-                  className="h-full w-full rounded-lg"
+                  className="p-4 h-full w-full object-contain rounded-lg"
                 />
               </div>
             )}
@@ -94,31 +96,9 @@ export default function Home() {
                 </ProjectBadge>
               </div>
             )}
-            {/* 
-            <div className="border border-red-500 absolute w-auto h-8 bottom-1/4 right-0 origin-bottom-right rotate-90  flex flex-row  ">
-              <button 
-                onClick={() => handlePageChange(1)} 
-                className={`px-1 py-1 bg-red-500 h-8 left-0 font-mono text-white rounded-t-lg z-10 ${currentPage === 1 ? 'bg-red-700 z-30' : ''}`}
-              >
-                  Background
-              </button>
-              <button 
-                  onClick={() => handlePageChange(2)} 
-                  className={`px-1 py-1 bg-green-500 left-0 font-mono text-white rounded-t-lg z-10 ${currentPage === 2 ? 'bg-green-700 z-30' : ''}`}              
-              >
-                  Extracurriculars
-              </button>
-              <button 
-                onClick={() => handlePageChange(3)} 
-                className={`px-1 py-1 bg-blue-500 left-0 font-mono text-white rounded-t-lg z-0 ${currentPage === 3 ? 'bg-blue-700 z-30' : ''}`}
-              >
-                Projects
-              </button>
-            </div>
-            */}
           </div>
           
-          <div className="border border-red-500 absolute items-stretch w-auto h-8 top-3/4 origin-top-right rotate-90 right-0 transform -translate-y-1/2 flex flex-row  ">
+          <div className="absolute items-stretch w-auto h-8 top-3/4 origin-top-right rotate-90 right-0 transform -translate-y-1/2 flex flex-row  ">
             <button 
               onClick={() => handlePageChange(1)} 
               className={`px-1 py-1 bg-red-500 h-8 left-0 font-mono text-white rounded-t-lg z-10 ${currentPage === 1 ? 'bg-red-700 z-30' : ''}`}
@@ -141,11 +121,14 @@ export default function Home() {
           
         </div>
       </div>
-      {/*Shadow
-      <div>
-
+      {/*Shadow*/}
+      <div className="absolute inset-0 pointer-events-none"
+                style={{
+                    background: `radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0.6) 100%)`,
+                    zIndex: 1
+                }}>
       </div>
-      */}
+      
     </div>
   );
 }
