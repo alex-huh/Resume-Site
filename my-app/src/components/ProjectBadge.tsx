@@ -4,7 +4,14 @@ import { VscSymbolKeyword } from "react-icons/vsc";
 import { HiChatBubbleBottomCenterText } from "react-icons/hi2";
 import { FaGithub } from "react-icons/fa";
 
-export default function ProjectBadge(props: any) {
+interface Badge{
+  languages: string[];
+  title: string;
+  description: string;
+  link: string;
+}
+
+export default function ProjectBadge(props:Badge) {
   const title = props.title;
   const languages = props.languages;
   return (

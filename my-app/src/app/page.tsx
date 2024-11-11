@@ -1,5 +1,4 @@
 'use client'
-import Image from "next/image";
 
 import { SetStateAction, useState } from 'react';
 import ProjectBadge from "../components/ProjectBadge";
